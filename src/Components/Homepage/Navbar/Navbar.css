@@ -1,0 +1,65 @@
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  border: 1px solid white;
+  align-items: center;
+  height: 80px;
+}
+.popular-categories {
+  padding-top: 40px;
+  position: relative;
+  left: 40px;
+  font-size: 20px;
+}
+.hr {
+  width: 90%;
+  margin: 0 auto;
+}
+.categories-dropdwon {
+  border: 1px solid white;
+  background-color: white;
+  width: 783px;
+  border-radius: 10px;
+  animation-name: spin;
+  animation-duration: 2s;
+}
+
+.grid-categories {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 30px;
+  z-index: 0;
+  padding: 20px 20px;
+}
+
+.containers * {
+  display: inline-block;
+  position: absolute;
+  padding-bottom: 60px;
+  padding-left: 20px;
+}
+
+.containers .name {
+  position: relative;
+  top: 10px;
+  left: 70px;
+}
+
+@media screen and (max-width: 1920px) and (min-width: 1024px) {
+  .categories-dropdwon {
+    margin-left: 395px;
+  }
+}
+.aviable-itmes {
+  position: relative;
+  top: 30px;
+  left: 20px;
+}
+
+@keyframes spin {
+  0% {
+  }
+  100% {
+  }
+}

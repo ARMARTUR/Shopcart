@@ -1,0 +1,87 @@
+.today-best-deals-container {
+  margin-top: 100px;
+  margin-left: 200px;
+  margin-bottom: 200px;
+  height: 500px;
+}
+.today-best-deals-text {
+  font-size: 28px;
+  font-family: Eina02, sans-serif;
+  margin-bottom: 40px;
+  font-weight: 800;
+}
+.best-deals-items {
+  height: 380px;
+  width: 300px;
+}
+.best-deals-item-image {
+  height: 200px;
+}
+.best-deals-favorite-icon {
+  padding-left: 90%;
+}
+.best-deals-item-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.best-deals-item-description {
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.best-deals-item-info {
+  margin-top: 20px;
+  position: absolute;
+}
+
+.best-deals-item-title {
+  width: 170px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+.best-deals-item-price {
+  display: inline-block;
+  position: relative;
+  bottom: 5px;
+  left: 30px;
+  font-weight: 800;
+}
+.best-deals-item-rate {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.best-deals-item-rate-count {
+  display: inline-block;
+}
+.best-deals-item-add-to-cart {
+  margin-top: 10px;
+  border-radius: 20px;
+  height: 40px;
+  width: 120px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.best-deals-item-add-to-cart:hover {
+  transition: 0.3s;
+  background-color: #003d29;
+  color: white;
+  cursor: pointer;
+}
+.swiper-scrollbar {
+  width: 8px;
+}
+.today-best-deals-circular-progress {
+  position: absolute;
+}
+.circular-progress {
+  position: relative;
+  left: 900px;
+  top: 200px;
+}

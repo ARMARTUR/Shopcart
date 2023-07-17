@@ -1,0 +1,113 @@
+.weekly-top-products-container {
+  position: absolute;
+  margin-top: 400px;
+  height: 800px;
+}
+
+.weekly-top-products-categories-container {
+  display: flex;
+  flex-direction: row;
+
+  position: relative;
+
+  gap: 10px;
+}
+.weekly-top-products-items-favorite-container {
+  position: relative;
+  left: 90%;
+}
+.weekly-top-products-item-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  left: 18%;
+  gap: 45px;
+}
+.weekly-top-products-items-description-container {
+  position: relative;
+  top: 20px;
+}
+.weekly-top-products-items-description-title-price-container {
+  display: flex;
+  flex-direction: row;
+}
+.weekly-top-products-items-price {
+  position: relative;
+  left: 20%;
+}
+.weekly-top-products-item {
+  width: 250px;
+}
+.weekly-top-products-categories-items {
+  position: relative;
+  border: 1px solid black;
+  width: 100px;
+  height: 44px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 200px;
+}
+.weekly-top-products-items-add-to-cart-button {
+  border: 1px solid black;
+  border-radius: 30px;
+  width: 128px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+.weekly-top-products-items-add-to-cart-button:hover {
+  background-color: #003d29;
+  transition: 0.3s;
+  color: white;
+}
+
+.weekly-top-products-items-image {
+  height: 200px;
+}
+/* 
+
+.weekly-top-products-items-image-container {
+  height: 380px;
+}
+.weekly-top-products-items-image {
+  height: 200px;
+}
+.weekly-top-products-items-container {
+  position: absolute;
+  display: block;
+}
+.weekly-top-products-items {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 90px;
+  left: 15%;
+}
+.weekly-top-products-items-name-and-price-container {
+  display: flex;
+}
+
+.weekly-top-products-items-name {
+  position: relative;
+  white-space: nowrap;
+}
+.weekly-top-products-items-info-container {
+  position: relative;
+
+  right: 12%;
+  top: 250px;
+}
+
+.weekly-top-products-items-favorite {
+  position: relative;
+  left: 90%;
+}
+.weekly-top-products-items-rating-container {
+  display: flex;
+}
+
+ */

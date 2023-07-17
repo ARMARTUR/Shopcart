@@ -1,0 +1,103 @@
+.button-color {
+  border: 1px solid #003d29;
+  background-color: #003d29;
+  display: flex;
+  border-radius: 50px;
+  width: 127px;
+  height: 33px;
+  color: white;
+  position: relative;
+  left: 300px;
+  bottom: 100px;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+  width: 167px;
+}
+
+.banner-area {
+  position: relative;
+  z-index: 0;
+  padding-top: 550px;
+  padding-bottom: 100px;
+  background-image: url("https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e58c0997219ec01eb6_background-bg-min.png");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.banner-stage-wrap {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: auto;
+  bottom: auto;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-title {
+  color: #003d29;
+  text-transform: capitalize;
+  font-size: 70px;
+  position: relative;
+  bottom: 400px;
+  left: 300px;
+}
+.banner-title-departament {
+  color: #003d29;
+  text-transform: capitalize;
+  font-size: 70px;
+  position: relative;
+  bottom: 300px;
+  left: 300px;
+}
+.banner-paragraph {
+  writing-mode: horizontal-tb;
+  position: relative;
+  font-size: 20px;
+  bottom: 180px;
+  left: 300px;
+}
+.overflow-hidden {
+  position: absolute;
+}
+.banner-product-image-one {
+  position: absolute;
+  left: auto;
+  top: 71px;
+  right: 125px;
+  bottom: auto;
+}
+
+.banner-product-image-two {
+  position: absolute;
+  left: auto;
+  top: 156px;
+  right: 433px;
+  bottom: auto;
+}
+
+.banner-product-image-three {
+  position: absolute;
+  left: auto;
+  top: 300px;
+  right: 208px;
+  bottom: auto;
+}
+
+.banner-product-image-four {
+  position: absolute;
+  left: auto;
+  top: 350px;
+  right: 550px;
+  bottom: auto;
+}
+
+.banner-stage-bg {
+  text-align: right;
+}
+.container{
+  z-index: 0;
+}
