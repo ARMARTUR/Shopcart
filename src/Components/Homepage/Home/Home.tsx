@@ -8,6 +8,7 @@ import { fetchCategories } from "../../../Redux/CategoriesReducer";
 import { useAppDispatch } from "../../../Redux/Hook";
 import { fetchProductByCategory } from "../../../Redux/SearchProductReducer";
 import { useAppSelector } from "../../../Redux/Hook";
+
 function Home() {
   let dispatch = useAppDispatch();
   useEffect(() => {
@@ -16,7 +17,6 @@ function Home() {
 
   return (
     <>
-      <Navbar />
       <Banner />
       <TodayBestDeals />
       <DiscountBanner />

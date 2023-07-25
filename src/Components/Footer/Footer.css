@@ -1,0 +1,125 @@
+.footer-container {
+  display: flex;
+  position: absolute;
+  gap: 60px;
+
+  width: 1247px;
+  left: 300px;
+  border: 1px solid rgba(35, 31, 30, 0.2);
+  border-top-width: 60%;
+  padding-top: 60px;
+  padding-bottom: 30px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.footer-accepted-payments-container {
+  display: grid;
+  grid-template-columns: repeat(4, 58px);
+  gap: 10px;
+  margin: 15px 0px 15px 0px;
+  height: 80px;
+}
+
+.footer-accepted-payments-item {
+  border: 1px solid #bbbfbd;
+  border-radius: 5px;
+  text-align: center;
+}
+.footer-slogan {
+  font-size: 14px;
+  line-height: 22px;
+  margin: 30px 0px 0px 0px;
+}
+.footer-categories-item {
+  margin: 10px 0px;
+  transition: transform 0.2s ease;
+  font: 15px Inter, sans-serif;
+}
+.footer-categories-item:hover {
+  cursor: pointer;
+  transform: translateX(10px);
+  color: rgb(231, 146, 66);
+}
+.footer-categories-text {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+}
+.footer-about-us-text {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+.footer-about-us-item {
+  transition: transform 0.2s ease;
+  margin: 7px 0px;
+}
+.footer-about-us-item:hover {
+  cursor: pointer;
+  transform: translateX(10px);
+  color: rgb(231, 146, 66);
+}
+.footer-services-text {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+.footer-help-text {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.footer-help-item {
+  margin: 7px 0px;
+  transition: transform 0.2s ease;
+}
+.footer-help-item:hover {
+  cursor: pointer;
+  transform: translateX(10px);
+  color: rgb(231, 146, 66);
+}
+.footer-services-item {
+  margin: 7px 0px;
+  transition: transform 0.2s ease;
+}
+.footer-services-item:hover {
+  cursor: pointer;
+  transform: translateX(10px);
+  color: rgb(231, 146, 66);
+}
+.stripe {
+  position: relative;
+  top: 5px;
+}
+.visa {
+  position: relative;
+  top: 5px;
+}
+.mastercard {
+  position: relative;
+  top: 2px;
+}
+.amazon {
+  position: relative;
+  top: 7px;
+}
+.klarna {
+  position: relative;
+  top: 5px;
+}
+.paypal {
+  position: relative;
+  top: 2px;
+}
+.googlepay {
+  position: relative;
+  top: 5px;
+}
+.applepay {
+  position: relative;
+  top: 5px;
+}
+.footer-accepted-payments-text {
+  font-weight: 900;
+  font: 18px Inter, sans-serif;
+  margin: 25px 0px 15px 0px;
+}

@@ -1,69 +1,62 @@
 .discount-banner-container {
-  background-color: #ffe6cc;
-  height: 330px;
-
-  position: absolute;
   width: 100%;
-
+  background: #ffe6cc;
+  height: 330px;
+  margin: 0px 0px 100px 0px;
 }
 .discount-banner-text-container {
   position: absolute;
-  left: 400px;
-  top: 70px;
-}
-.discount-bannner-images {
-position: absolute;
-  left: 1100px;
 }
 .discount-banner-cashback-text {
-  font-size: 52px;
-  font: Inter, san-serif;
-  display: block;
-  width: 461px;
-  font-weight: 700;
+  position: relative;
+  font: 58px Inter, sans-serif;
+  font-weight: 600;
+  margin: 0px 0px 18px;
+  left: 400px;
+  top: 50px;
 }
 .discount-banner-on-shopcart {
+  position: relative;
+  left: 404px;
+  top: 50px;
   font: 20px Inter, sans-serif;
-  margin: 30px 0px 30px;
-  font-weight: 800;
 }
 .discount-banner-learn-more {
+  position: relative;
   display: flex;
-  border: 1px solid;
-  width: 167px;
   height: 56px;
-  background-color: #003d29;
+  width: 167px;
+  background: #003d29;
+  border-radius: 40px;
   color: white;
-  border-radius: 30px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  font: 18px Elina01, sans-serif;
+  font: 16px Inter, sans-serif;
   font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  top: 80px;
+  left: 400px;
+}
+.discount-bannner-images {
   position: absolute;
-  
 }
 .discount-banner-first-card-image {
-  position: relative;
-  transform: rotate(-30deg);
-top: 50px;
   z-index: 2;
-  right: -40px;
+  position: relative;
+  left: 1070px;
+  top: 50px;
+  transform: rotate(-38deg);
 }
 .discount-banner-second-card-image {
-bottom: 95px;
-  position: relative;
-  transform: rotate(-15deg);
   z-index: 1;
-  left: 60px;
+  position: relative;
+  left: 1090px;
+  transform: rotate(-25deg);
+  top: -100px;
 }
 .discount-banner-third-card-image {
   z-index: 0;
- bottom: 250px;
   position: relative;
-  transform: rotate(-10deg);
-  left: 70px;
-}
-.discount-banner-learn-more:hover{
- background-color: black;
+  left: 1100px;
+  top: -250px;
+  transform: rotate(-13deg);
 }

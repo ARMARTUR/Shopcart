@@ -1,16 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
 
-
 interface ProductsState {
   categories: string[];
   loading: boolean;
   error: null | string;
 }
-
-
-
-
 
 export const fetchCategories = createAsyncThunk(
   "categories/fetch",
@@ -25,18 +20,12 @@ export const fetchCategories = createAsyncThunk(
   }
 );
 
-
-
-
 const initialState: ProductsState = {
-
-     categories:[],
-     
+  categories: [],
 
   loading: false,
   error: null,
 };
-
 
 const productSlice = createSlice({
   name: "products",
@@ -49,9 +38,8 @@ const productSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchCategories.fulfilled, (state, action) => {
- 
         state.loading = false;
-        state.categories = action.payload
+        state.categories = action.payload;
       })
       .addCase(fetchCategories.rejected, (state, action) => {
         state.loading = false;

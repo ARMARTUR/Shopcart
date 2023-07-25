@@ -16,13 +16,13 @@ function WeeklyTopProducts() {
   let categories: string[] = useAppSelector(
     (state) => state.categories.categories
   );
-  // let [category, setCategory] = useState<string>("");
+
   let categoryProducts: TypeFetchResult = useAppSelector(
     (state) => state.searchProduct.products
   );
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
   useEffect(() => {
-    dispatch(fetchProductByCategory("smartphones"));
+    dispatch(fetchProductByCategory("laptops"));
   }, []);
   function fetchChangedCategory(category: string) {
     dispatch(fetchProductByCategory(category));
@@ -33,16 +33,16 @@ function WeeklyTopProducts() {
       <div className="weekly-top-product-text">Weekly Top Products For You</div>
 
       <div className="weekly-top-products-categories-container">
-        {categories.slice(0, 10).map((category: string) => {
+        {categories.slice(1, 7).map((category: string) => {
           return (
             <div
-              className={`weekly-top-products-categories-items color `}
+              className={`weekly-top-products-categories-items`}
               onClick={() => {
                 fetchChangedCategory(category);
               }}
-              style={{ background: "red" }}
             >
-              {category}
+              {category.slice(0, 1).toUpperCase() +
+                category.slice(1, category.length)}
             </div>
           );
         })}
@@ -94,7 +94,7 @@ function WeeklyTopProducts() {
                     </div>
 
                     <div className="weekly-top-produts-items-count">
-                      {category.stock}
+                      {`(${category.stock})`}
                     </div>
                   </div>
                   <div className="weekly-top-products-items-add-to-cart-button">
