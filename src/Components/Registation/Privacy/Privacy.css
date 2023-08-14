@@ -1,0 +1,315 @@
+.privacy-header-container {
+  display: grid;
+  grid-template-areas:
+    "privacy-text img"
+    "text img";
+}
+.privacy-img {
+  grid-area: img;
+  height: 477px;
+  width: 631px;
+  margin-right: 300px;
+  height: 100%;
+}
+.privacy-text {
+  margin-left: 300px;
+  margin-top: 120px;
+  grid-area: privacy-text;
+  /* left: 300px;
+  position: relative; */
+  font-size: 48px;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-weight: 700;
+}
+.privacy-policy-text {
+  grid-area: text;
+  margin-bottom: 200px;
+  color: #69b4f2;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 21px;
+  margin-left: 300px;
+  /* font-weight: 600; */
+}
+.privacy-items-container * {
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 15px;
+}
+.privacy-updated {
+  margin-left: 350px;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+  font-weight: 600;
+}
+.privacy-hr {
+  margin: 15px 0px 15px;
+  width: 60%;
+  margin-left: 350px;
+}
+.privacy-information-header {
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 850px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.privacy-using-header {
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 20px;
+  font-weight: 600;
+  margin: 30px 0px 30px 820px;
+}
+.privacy-welcome {
+  margin-left: 350px;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.privacy-first {
+  margin-left: 350px;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.privacy-second {
+  margin-left: 350px;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.privacy-third {
+  margin-left: 350px;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.privacy-fourth {
+  margin-left: 350px;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.privacy-contact-text {
+  margin-left: 350px;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.privacy-contact-header {
+}
+.privacy-using-info-item {
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 10px 0px 10px 350px;
+}
+.privacy-data-security-container * {
+  margin-left: 350px;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.privacy-children-container * {
+  margin-left: 350px;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.privacy-changes-container * {
+  margin-left: 350px;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.privacy-data-security-header {
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 900px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.privacy-children-header {
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 880px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.privacy-changes-header {
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 850px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.privacy-contact-header {
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 920px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}

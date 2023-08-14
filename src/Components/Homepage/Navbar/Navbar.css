@@ -57,9 +57,7 @@
   left: 20px;
 }
 
-@keyframes spin {
-  0% {
-  }
-  100% {
-  }
+.account-text:hover {
+  color: rgb(192, 165, 12);
+  cursor: pointer;
 }

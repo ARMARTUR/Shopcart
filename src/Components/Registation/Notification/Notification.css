@@ -1,0 +1,16 @@
+.notification-setting-header {
+  font-weight: 800;
+  font-size: 30px;
+  margin: 70px 0px 70px 380px;
+}
+.notification-order-header {
+  margin: 5px 400px;
+}
+.notification-schedule {
+  margin: 5px 400px;
+}
+.notification-header {
+  margin: 5px 400px;
+  font-size: 18px;
+  font-weight: 600;
+}

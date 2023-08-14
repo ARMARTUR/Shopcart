@@ -1,0 +1,221 @@
+.terms-banner-container {
+  display: grid;
+  grid-template-areas:
+    "text img"
+    "read img";
+  margin-bottom: 100px;
+}
+.terms-updated-at {
+  margin-left: 355px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.hr-terms {
+  width: 60%;
+  margin-left: 355px;
+  margin-bottom: 10px;
+}
+.terms-of-service-text {
+  grid-area: text;
+
+  font-size: 50px;
+  font-weight: 900;
+  margin-left: 300px;
+  margin-top: 200px;
+}
+.terms-read {
+  grid-area: read;
+  color: #69b4f2;
+
+  font-size: 20px;
+  margin: 0px 0px 190px 300px;
+}
+.terms-img {
+  grid-area: img;
+  width: 636px;
+  height: 477px;
+  margin-right: 330px;
+  margin-top: 50px;
+}
+.terms-welcome {
+  margin: 10px 0px 10px 355px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.terms-acceptance {
+  margin-left: 355px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+}
+.terms-user {
+  margin-left: 355px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+}
+.terms-selling {
+  margin-left: 355px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+}
+.terms-buying {
+  margin-left: 355px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+}
+.terms-payment {
+  margin-left: 355px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+}
+.terms-intelectual {
+  margin-left: 355px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+}
+.terms-prohibited {
+  margin-left: 355px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+}
+.terms-termination {
+  margin-left: 355px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+}
+.terms-disclaimer {
+  margin-left: 355px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+}
+.terms-limitation {
+  margin-left: 355px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+}
+.terms-changes {
+  margin-left: 355px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+}
+.terms-govering {
+  margin-left: 355px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-family: var(
+    --font-face,
+    "Haas Grot Text R Web",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif
+  );
+  font-size: 16px;
+}
+.terms-contacts {
+  margin-left: 355px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+
+  font-size: 16px;
+}

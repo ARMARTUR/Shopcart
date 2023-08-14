@@ -1,27 +1,29 @@
-
-import { Link } from 'react-router-dom';
-import Switch from '@mui/joy/Switch';
-import DarkMode from '@mui/icons-material/DarkMode';
-import "./Navbar.css"
-import { Input } from '@mui/joy';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import PersonIcon from '@mui/icons-material/Person';
-import { useState } from 'react';
+import { Link, NavigateFunction, useNavigate } from "react-router-dom";
+import Switch from "@mui/joy/Switch";
+import DarkMode from "@mui/icons-material/DarkMode";
+import "./Navbar.css";
+import { Input } from "@mui/joy";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import PersonIcon from "@mui/icons-material/Person";
+import { useState } from "react";
 
 function Navbar() {
-
-  let [categories, setCatigories] = useState<boolean>(false)
+  let navigate: NavigateFunction = useNavigate();
+  let [categories, setCatigories] = useState<boolean>(false);
   type TypeLinkStyle = {
-    textDecoration: string,
-    color: string
-  }
-  const linkStyles: TypeLinkStyle = {
-    textDecoration: 'none',
-    color: 'inherit',
+    textDecoration: string;
+    color: string;
   };
-
-
-
+  const linkStyles: TypeLinkStyle = {
+    textDecoration: "none",
+    color: "inherit",
+  };
+  let changeAccountDirectory = (
+    e: React.MouseEvent<HTMLSpanElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+    navigate("/account");
+  };
 
   return (
     <>
@@ -34,13 +36,12 @@ function Navbar() {
             ></img>
           </Link>
         </div>
-        <div className="category-link" style={{fontSize:"18px"}}>
+        <div className="category-link" style={{ fontSize: "18px" }}>
           <div
             onClick={() => {
-            
               setCatigories(!categories);
             }}
-            className='asd'
+            className="asd"
           >
             Category
           </div>
@@ -67,7 +68,11 @@ function Navbar() {
           />
         </div>
         <div className="account-link" style={{ position: "relative" }}>
-          <span style={{ position: "absolute", left: "35px", top: "3px" }}>
+          <span
+            onClick={changeAccountDirectory}
+            style={{ position: "absolute", left: "35px", top: "3px" }}
+            className="account-text"
+          >
             Account
           </span>
           <PersonIcon />
@@ -100,13 +105,12 @@ function Navbar() {
               zIndex: 10,
               position: "absolute",
               top: "60px",
-             
             }}
           >
             <div className="popular-categories">Popular Categories</div>
             <br />
-            <hr  className='hr'/>
-            <br/>
+            <hr className="hr" />
+            <br />
             <div className="grid-categories">
               <div className="furniture containers">
                 <img
@@ -168,7 +172,4 @@ function Navbar() {
   );
 }
 
-export default Navbar
-
-
- 
+export default Navbar;

@@ -1,0 +1,141 @@
+.sing-up-form-container {
+  display: grid;
+  grid-template-areas:
+    "name surname"
+    "email email"
+    "password password"
+    "agree agree"
+    "button button"
+    "singin singin";
+
+  position: absolute;
+  left: 40%;
+  height: 550px;
+  width: 414px;
+}
+.sing-up-text {
+  margin-left: 750px;
+
+  font: bold 24px/29px
+    var(
+      --font-face,
+      "Haas Grot Text R Web",
+      "Helvetica Neue",
+      Helvetica,
+      Arial,
+      sans-serif
+    );
+}
+.sing-up-name-text {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.sing-up-surname-text {
+  margin-bottom: 5px;
+  font-weight: 600;
+  position: relative;
+  left: 36px;
+}
+.sing-up-password-text {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.sing-up-email-text {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.sing-up-surname {
+  height: 35px;
+  padding: 10px 0px 10px 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  margin-left: 35px;
+}
+.sing-up-email {
+  height: 35px;
+  padding: 10px 0px 10px 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  width: 100%;
+}
+.sing-up-name {
+  height: 35px;
+  padding: 10px 0px 10px 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+.sing-up-password {
+  height: 35px;
+  padding: 10px 0px 10px 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+.sing-up-create-account-button {
+  grid-area: button;
+  width: 100%;
+  height: 56px;
+  background-color: black;
+  border-radius: 10px;
+  border: 1px solid black;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.5s cubic-bezier(0.32, 0, 0.59, 0.03);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sing-up-name-field-container {
+  grid-area: name;
+}
+.sing-up-surname-field-container {
+  grid-area: surname;
+}
+.sing-up-email-field-container {
+  grid-area: email;
+}
+.sing-up-password-container {
+  grid-area: password;
+}
+.sing-up-agree-checkbox {
+  height: 18px;
+  width: 18px;
+}
+.sing-up-agree-text {
+  font: normal 14px/18px
+    var(
+      --font-face,
+      "Haas Grot Text R Web",
+      "Helvetica Neue",
+      Helvetica,
+      Arial,
+      sans-serif
+    );
+}
+.sing-up-create-account-button:hover {
+  background-color: rgb(165, 163, 163);
+  border-color: transparent;
+}
+.sing-up-agree-container {
+  grid-area: agree;
+  position: relative;
+  left: 10px;
+}
+.sing-up-agree-checkbox {
+  position: relative;
+  top: -10px;
+  left: -10px;
+  display: inline-block;
+}
+.sing-up-agree-text {
+  display: inline-block;
+}
+.sing-up-sing-in-text {
+  grid-area: singin;
+  position: relative;
+  top: -20px;
+  left: 23%;
+  font: normal 14px/18px;
+}
