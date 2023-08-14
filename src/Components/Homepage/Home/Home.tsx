@@ -8,6 +8,7 @@ import { fetchCategories } from "../../../Redux/CategoriesReducer";
 import { useAppDispatch } from "../../../Redux/Hook";
 import { fetchProductByCategory } from "../../../Redux/SearchProductReducer";
 import { useAppSelector } from "../../../Redux/Hook";
+import Footer from "../../Footer/Footer";
 
 function Home() {
   let dispatch = useAppDispatch();
@@ -21,6 +22,7 @@ function Home() {
       <TodayBestDeals />
       <DiscountBanner />
       <WeeklyTopProducts />
+      <Footer />
     </>
   );
 }
