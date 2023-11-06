@@ -10,6 +10,9 @@ import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
 import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../../../Firebase/Firebase";
+
 function WeeklyTopProducts() {
   const dispatch = useAppDispatch();
 

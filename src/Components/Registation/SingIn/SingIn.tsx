@@ -18,7 +18,7 @@ function SingIn() {
         email,
         password
       );
-      console.log(user, "user");
+
       navigate("/");
     } catch (error) {
       console.log(error);

@@ -6,8 +6,18 @@ import { Input } from "@mui/joy";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
 import { useState } from "react";
+import { useAppSelector } from "../../../Redux/Hook";
+import React from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { useAppDispatch } from "../../../Redux/Hook";
+import { auth } from "../../../Firebase/Firebase";
+import { userAuth } from "../../../Redux/AuthReducer";
+import Badge from "@mui/joy/Badge";
+import Typography from "@mui/joy/Typography";
 
 function Navbar() {
+  let isLoggined = useAppSelector((state) => state.auth.auth);
+  console.log(isLoggined, "isloggined navbar.tsx");
   let navigate: NavigateFunction = useNavigate();
   let [categories, setCatigories] = useState<boolean>(false);
   type TypeLinkStyle = {
@@ -17,12 +27,6 @@ function Navbar() {
   const linkStyles: TypeLinkStyle = {
     textDecoration: "none",
     color: "inherit",
-  };
-  let changeAccountDirectory = (
-    e: React.MouseEvent<HTMLSpanElement, MouseEvent>
-  ) => {
-    e.preventDefault();
-    navigate("/account");
   };
 
   return (
@@ -69,19 +73,28 @@ function Navbar() {
         </div>
         <div className="account-link" style={{ position: "relative" }}>
           <span
-            onClick={changeAccountDirectory}
             style={{ position: "absolute", left: "35px", top: "3px" }}
             className="account-text"
           >
-            Account
+            {isLoggined === null ? (
+              <Link to="/singup" className="sing-up-link">
+                Sing up
+              </Link>
+            ) : (
+              <Link to="/account" className="sing-up-banner-account-text">
+                Account
+              </Link>
+            )}
           </span>
           <PersonIcon />
         </div>
         <div className="cart-link" style={{ position: "relative" }}>
-          <span style={{ position: "absolute", left: "35px", top: "3px" }}>
-            Cart
-          </span>
-          <AddShoppingCartIcon />
+          <Link to={"/cart"}>
+            <Badge badgeContent={1}>
+              <Typography fontSize="xl">🛍</Typography>
+            </Badge>
+          </Link>
+          {/* <AddShoppingCartIcon /> */}
         </div>
         <div className="togle-mode">
           <Switch

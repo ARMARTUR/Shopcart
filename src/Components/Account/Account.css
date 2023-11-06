@@ -1,0 +1,99 @@
+.account-page-container {
+  border: 1px solid red;
+  margin-left: 200px;
+  height: 600px;
+}
+
+.account-page-tab-account-container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "name surname"
+    "email password";
+  width: 600px;
+  /* background-color: red; */
+  position: absolute;
+  bottom: 60px;
+}
+.account-page-account-header {
+  grid-area: header;
+  font-size: 30px;
+  font-weight: 600;
+  position: relative;
+  left: 34px;
+  bottom: 20px;
+}
+.account-page-account-name-container {
+  position: relative;
+  grid-area: name;
+  top: 20px;
+}
+.account-page-account-surname-container {
+  position: relative;
+  top: 20px;
+  grid-area: surname;
+}
+.account-page-account-email-container {
+  position: relative;
+  top: 20px;
+  grid-area: email;
+}
+
+.account-page-account-password-container {
+  position: relative;
+  top: 20px;
+  grid-area: password;
+}
+.account-page-account-name-input {
+  height: 35px;
+  padding: 10px 0px 10px 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  margin-left: 35px;
+}
+.account-page-account-surname-input {
+  height: 35px;
+  padding: 10px 0px 10px 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  margin-left: 35px;
+}
+.account-page-account-email-input {
+  height: 35px;
+  padding: 10px 0px 10px 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  margin-left: 35px;
+}
+.account-page-account-password-input {
+  height: 35px;
+  padding: 10px 0px 10px 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  margin-left: 35px;
+}
+
+.account-page-name-text {
+  margin-bottom: 5px;
+  font-weight: 600;
+  margin-left: 35px;
+}
+.account-page-surname-text {
+  margin-bottom: 5px;
+  font-weight: 600;
+  margin-left: 35px;
+}
+.account-page-email-text {
+  margin-bottom: 5px;
+  font-weight: 600;
+  margin-left: 35px;
+}
+.account-page-password-text {
+  margin-bottom: 5px;
+  font-weight: 600;
+
+  margin-left: 35px;
+}
+.account-page-avatar-container {
+  width: 100px;
+}

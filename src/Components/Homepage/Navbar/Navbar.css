@@ -61,3 +61,12 @@
   color: rgb(192, 165, 12);
   cursor: pointer;
 }
+.sing-up-link {
+  text-decoration: none;
+  color: black;
+  white-space: nowrap;
+}
+.sing-up-banner-account-text {
+  text-decoration: none;
+  color: black;
+}

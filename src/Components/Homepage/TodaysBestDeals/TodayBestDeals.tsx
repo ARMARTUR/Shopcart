@@ -15,7 +15,8 @@ import { CircularProgress } from "@mui/joy";
 import Checkbox from "@mui/material/Checkbox";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
-
+import { auth, db } from "../../../Firebase/Firebase";
+import { doc, updateDoc, arrayUnion, getDoc } from "firebase/firestore";
 import { fetchListProducts } from "../../../Redux/ProductsReducer";
 import { FetchResult } from "../../../Redux/ProductsReducer";
 function TodayBestDeals() {
@@ -29,7 +30,16 @@ function TodayBestDeals() {
   useEffect(() => {
     dispatch(fetchListProducts());
   }, []);
-
+  const changeFavorite = async (id: any) => {
+    console.log(id, 646237843764862367);
+    console.log(auth.currentUser?.uid);
+    if (auth.currentUser) {
+      const favoriteRef = doc(db, "Users", `${auth.currentUser?.uid}`);
+      await updateDoc(favoriteRef, {
+        favoriteMovies: arrayUnion(`${id}`), ////stex piti lini mer apranqi idin
+      });
+    }
+  };
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
   return isLoading === true ? (
     <div className="today-best-deals-container">
@@ -52,6 +62,9 @@ function TodayBestDeals() {
                       {...label}
                       icon={<FavoriteBorder />}
                       checkedIcon={<Favorite />}
+                      onClick={() => {
+                        changeFavorite(product.id);
+                      }}
                     />
                   </div>
                   <div className="best-deals-item-image-container">

@@ -1,10 +1,6 @@
-import React from 'react';
-import "./Banner.css"
-
-
-
-
-
+import React from "react";
+import "./Banner.css";
+import { useAppSelector } from "../../../Redux/Hook";
 const BannerSection = () => {
   return (
     <section className="banner-area">
@@ -46,8 +42,9 @@ const BannerSection = () => {
                 }}
                 className="banner-paragraph"
               >
-                Shopping is a bit of a relaxing hobby for me, which<br/>is sometimes
-                troubling for the bank balance.
+                Shopping is a bit of a relaxing hobby for me, which
+                <br />
+                is sometimes troubling for the bank balance.
               </p>
             </div>
           </div>

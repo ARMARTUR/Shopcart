@@ -14,6 +14,7 @@ import { db } from "../../../Firebase/Firebase";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 import { getAuth } from "firebase/auth";
+import { useAppDispatch } from "../../../Redux/Hook";
 type inputs = {
   name: string;
   surname: string;
@@ -23,6 +24,7 @@ type inputs = {
 
 function SingUp() {
   let navigate: NavigateFunction = useNavigate();
+  let dispatch = useAppDispatch();
   let [agree, setAgree] = useState<boolean>(false);
   const {
     register,
@@ -53,14 +55,23 @@ function SingUp() {
     email: string,
     password: string
   ) {
-    // const auth: Auth = getAuth();
-    await createUserWithEmailAndPassword(auth, email, password).then(
-      (userCredential: UserCredential) => {
-        console.log(userCredential);
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        const usersRef = doc(db, "Users", `${user.uid}`);
+        setDoc(
+          usersRef,
+          { name: name, surname: surname, email: email, password: password },
+          { merge: true }
+        );
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
 
-        navigate("/");
-      }
-    );
+    navigate("/");
   }
 
   return (
