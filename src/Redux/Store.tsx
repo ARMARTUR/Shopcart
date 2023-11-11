@@ -3,12 +3,14 @@ import productsReducer from "./ProductsReducer";
 import CategoriesReducer from "./CategoriesReducer";
 import SearchProductReducer from "./SearchProductReducer";
 import AuthReducer from "./AuthReducer";
+import SnackbarReducer from "./SnackbarReducer";
 const store = configureStore({
   reducer: {
     products: productsReducer,
     categories: CategoriesReducer,
     searchProduct: SearchProductReducer,
     auth: AuthReducer,
+    snackbar: SnackbarReducer,
   },
 });
 

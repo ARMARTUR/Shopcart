@@ -1,7 +1,7 @@
 import { Navigation, Pagination, Scrollbar, A11y, autoplay } from "swiper";
 import "./TodayBestDeals.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useAppSelector, useAppDispatch } from "../../../Redux/Hook";
+import { useAppSelector, useAppDispatch } from "../../Redux/Hook";
 import { useEffect } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -15,10 +15,10 @@ import { CircularProgress } from "@mui/joy";
 import Checkbox from "@mui/material/Checkbox";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
-import { auth, db } from "../../../Firebase/Firebase";
+import { auth, db } from "../../Firebase/Firebase";
 import { doc, updateDoc, arrayUnion, getDoc } from "firebase/firestore";
-import { fetchListProducts } from "../../../Redux/ProductsReducer";
-import { FetchResult } from "../../../Redux/ProductsReducer";
+import { fetchListProducts } from "../../Redux/ProductsReducer";
+import { FetchResult } from "../../Redux/ProductsReducer";
 function TodayBestDeals() {
   const productsList: FetchResult = useAppSelector(
     (state) => state.products.products

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Banner.css";
-import { useAppSelector } from "../../../Redux/Hook";
-const BannerSection = () => {
+
+const Banner = () => {
   return (
     <section className="banner-area">
       <div className="container">
@@ -147,4 +147,4 @@ const BannerSection = () => {
   );
 };
 
-export default BannerSection;
+export default Banner;

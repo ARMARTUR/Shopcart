@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { fetchCategories } from "../../../Redux/CategoriesReducer";
-import { useAppDispatch, useAppSelector } from "../../../Redux/Hook";
-import { TypeFetchResult } from "../../../Redux/SearchProductReducer";
+import { fetchCategories } from "../../Redux/CategoriesReducer";
+import { useAppDispatch, useAppSelector } from "../../Redux/Hook";
+import { TypeFetchResult } from "../../Redux/SearchProductReducer";
 import "./WeeklyTopProducts.css";
-import { fetchProductByCategory } from "../../../Redux/SearchProductReducer";
-import { Product } from "../../../Redux/ProductsReducer";
+import { fetchProductByCategory } from "../../Redux/SearchProductReducer";
+import { Product } from "../../Redux/ProductsReducer";
 import Checkbox from "@mui/material/Checkbox";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
 import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
 import { doc, updateDoc } from "firebase/firestore";
-import { db } from "../../../Firebase/Firebase";
+import { db } from "../../Firebase/Firebase";
 
 function WeeklyTopProducts() {
   const dispatch = useAppDispatch();

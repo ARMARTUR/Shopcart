@@ -6,12 +6,12 @@ import { Input } from "@mui/joy";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
 import { useState } from "react";
-import { useAppSelector } from "../../../Redux/Hook";
+import { useAppSelector } from "../../Redux/Hook";
 import React from "react";
 import { onAuthStateChanged } from "firebase/auth";
-import { useAppDispatch } from "../../../Redux/Hook";
-import { auth } from "../../../Firebase/Firebase";
-import { userAuth } from "../../../Redux/AuthReducer";
+import { useAppDispatch } from "../../Redux/Hook";
+import { auth } from "../../Firebase/Firebase";
+import { userAuth } from "../../Redux/AuthReducer";
 import Badge from "@mui/joy/Badge";
 import Typography from "@mui/joy/Typography";
 

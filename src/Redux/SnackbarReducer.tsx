@@ -1,21 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit";
-type isAuth = {
-  auth: string | null;
+
+export type typeSnackbar = {
+  message: string;
+  color: boolean;
+  open: boolean;
 };
-let initialState: isAuth = {
-  auth: null,
+let initialState: typeSnackbar = {
+  message: " Your message was sent successfully",
+  color: false,
+  open: false,
 };
-let userSlice = createSlice({
-  name: "auth",
+let snackbarSlice = createSlice({
+  name: "snackbar",
   initialState,
   reducers: {
-    userAuth(state, action) {
-      state.auth = action.payload;
+    setSnackbar(state, action) {
+      state.message = action.payload.message;
+      state.color = action.payload.color;
+      state.open = action.payload.open;
     },
   },
 });
 
-export const { userAuth } = userSlice.actions;
-console.log(userSlice.reducer, "opuiodsyfhds");
-export default userSlice.reducer;
+export const { setSnackbar } = snackbarSlice.actions;
+// console.log(snackbarSlice.reducer, "opuiodsyfhds");
+export default snackbarSlice.reducer;

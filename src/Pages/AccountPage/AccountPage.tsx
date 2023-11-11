@@ -10,10 +10,10 @@ import Tabs from "@mui/joy/Tabs";
 import TabList from "@mui/joy/TabList";
 import Tab from "@mui/joy/Tab";
 import TabPanel from "@mui/joy/TabPanel";
-import "./Account.css";
+import "./AccountPage.css";
 import { Height } from "@mui/icons-material";
 import { getAuth } from "firebase/auth";
-import Security from "./Security/Security";
+import Security from "../../Components/Security/Security";
 import { auth } from "../../Firebase/Firebase";
 import { collection, doc, getDocs } from "firebase/firestore";
 import { updateDoc } from "firebase/firestore";
@@ -24,7 +24,7 @@ import { DocumentData } from "firebase/firestore";
 import { useState } from "react";
 import { Auth } from "firebase/auth";
 
-function Account() {
+function AccountPage() {
   let [agree, setAgree] = useState<any>({});
   type dataType = {
     name: string;
@@ -163,4 +163,4 @@ function Account() {
   );
 }
 
-export default Account;
+export default AccountPage;

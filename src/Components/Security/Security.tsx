@@ -1,7 +1,5 @@
 import "./Security.css";
-
 import React, { useEffect } from "react";
-
 import { useForm, SubmitHandler } from "react-hook-form";
 import { getDocs, collection, getDoc, updateDoc } from "firebase/firestore";
 import Input from "@mui/joy/Input";
@@ -10,15 +8,18 @@ import Button from "@mui/joy/Button";
 import LinearProgress from "@mui/joy/LinearProgress";
 import Typography from "@mui/joy/Typography";
 import Key from "@mui/icons-material/Key";
-import { db } from "../../../Firebase/Firebase";
+import { db } from "../../Firebase/Firebase";
 import { addDoc } from "firebase/firestore";
 import { doc } from "firebase/firestore";
-import { auth } from "../../../Firebase/Firebase";
+import { auth } from "../../Firebase/Firebase";
 import { useState } from "react";
 import { DocumentData } from "firebase/firestore";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { setDoc } from "firebase/firestore";
-
+import { useAppDispatch, useAppSelector } from "../../Redux/Hook";
+import { setSnackbar } from "../../Redux/SnackbarReducer";
+import { typeSnackbar } from "../../Redux/SnackbarReducer";
+import SnackbarUi from "../../Ui/Snackbar";
 type dataType = {
   name: string;
   password: string;
@@ -26,9 +27,19 @@ type dataType = {
   surname: string;
 };
 function Security() {
+  let [snackbarValue, setSnackbarValue] = useState<boolean>(false);
   let [showPassword, setShowPassword] = useState<boolean>(false);
-  let user = auth.currentUser;
-
+  let dispatch = useAppDispatch();
+  let snackbarColor = useAppSelector((state): boolean => {
+    return state.snackbar.color;
+  });
+  let snackbarMessage = useAppSelector((state) => {
+    return state.snackbar.message;
+  });
+  let snackbarIsOpen = useAppSelector((state): boolean => {
+    return state.snackbar.open;
+  });
+  console.log(snackbarColor, snackbarMessage, "message");
   let [agree, setAgree] = useState<DocumentData>();
   type inputs = {
     email: string;
@@ -36,7 +47,7 @@ function Security() {
   };
 
   // let [, setInputEmailValue] = useState<string>();
-  console.log(agree);
+
   const {
     register,
     handleSubmit,
@@ -48,11 +59,28 @@ function Security() {
     mode: "onBlur",
   });
   const changePassAndEmail = async (data: inputs) => {
-    const favoriteRef = doc(db, "Users", `${auth.currentUser?.uid}`);
-    await updateDoc(favoriteRef, {
-      password: data.password,
-      email: data.email,
-    });
+    try {
+      const favoriteRef = doc(db, "Users", `${auth.currentUser?.uid}`);
+      await updateDoc(favoriteRef, {
+        password: data.password,
+        email: data.email,
+      });
+      dispatch(
+        setSnackbar({
+          message: "Your message and email was changed successfully",
+          color: true,
+          open: true,
+        })
+      );
+    } catch (e) {
+      dispatch(
+        setSnackbar({
+          message: `Your message and email were'nt changed successfully`,
+          color: false,
+          open: true,
+        })
+      );
+    }
   };
   const onSubmit: SubmitHandler<inputs> = (data: inputs) => {
     if (data.password !== agree?.password && data.email !== agree?.email) {
@@ -90,11 +118,21 @@ function Security() {
 
     getuser();
   }, []);
-
+  let asa = {
+    color: snackbarColor,
+    message: snackbarMessage,
+    open: snackbarIsOpen,
+  };
+  console.log(asa);
   return (
     <div className="account-page-security-container">
       <div className="account-page-security-container">
         <div className="account-page-security-changing">
+          <SnackbarUi
+            color={snackbarColor}
+            message={snackbarMessage}
+            open={snackbarIsOpen}
+          />
           <div className="account-page-security-changing-text">
             Change the password
           </div>
@@ -137,7 +175,6 @@ function Security() {
                 {errors.password.message}
               </div>
             )}
-
             <button className="account-page-security-password-button">
               Change{" "}
             </button>
