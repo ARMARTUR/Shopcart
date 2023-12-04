@@ -1,24 +1,17 @@
 import "./Security.css";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { getDocs, collection, getDoc, updateDoc } from "firebase/firestore";
-import Input from "@mui/joy/Input";
-import Stack from "@mui/joy/Stack";
-import Button from "@mui/joy/Button";
-import LinearProgress from "@mui/joy/LinearProgress";
-import Typography from "@mui/joy/Typography";
-import Key from "@mui/icons-material/Key";
+import { getDoc, updateDoc } from "firebase/firestore";
+
 import { db } from "../../Firebase/Firebase";
-import { addDoc } from "firebase/firestore";
+
 import { doc } from "firebase/firestore";
 import { auth } from "../../Firebase/Firebase";
 import { useState } from "react";
 import { DocumentData } from "firebase/firestore";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import { setDoc } from "firebase/firestore";
 import { useAppDispatch, useAppSelector } from "../../Redux/Hook";
 import { setSnackbar } from "../../Redux/SnackbarReducer";
-import { typeSnackbar } from "../../Redux/SnackbarReducer";
 import SnackbarUi from "../../Ui/Snackbar";
 type dataType = {
   name: string;
@@ -26,34 +19,24 @@ type dataType = {
   email: string;
   surname: string;
 };
+type inputs = {
+  email: string;
+  password: string;
+};
 function Security() {
-  let [snackbarValue, setSnackbarValue] = useState<boolean>(false);
+  let [agree, setAgree] = useState<DocumentData>();
   let [showPassword, setShowPassword] = useState<boolean>(false);
   let dispatch = useAppDispatch();
-  let snackbarColor = useAppSelector((state): boolean => {
-    return state.snackbar.color;
-  });
-  let snackbarMessage = useAppSelector((state) => {
-    return state.snackbar.message;
-  });
-  let snackbarIsOpen = useAppSelector((state): boolean => {
-    return state.snackbar.open;
-  });
-  console.log(snackbarColor, snackbarMessage, "message");
-  let [agree, setAgree] = useState<DocumentData>();
-  type inputs = {
-    email: string;
-    password: string;
-  };
-
-  // let [, setInputEmailValue] = useState<string>();
+  let snackbarColor = useAppSelector((state): boolean => state.snackbar.color);
+  let snackbarMessage = useAppSelector((state) => state.snackbar.message);
+  let snackbarIsOpen = useAppSelector((state): boolean => state.snackbar.open);
 
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-    reset,
+
     setError,
   } = useForm<inputs>({
     mode: "onBlur",
@@ -101,7 +84,7 @@ function Security() {
       });
     }
   };
-  // i^]sifNR(.EI6X64te<EWkBTIJ9.RYl&.1`6/mTDU2l6Cc617S
+
   useEffect(() => {
     const getuser = async () => {
       const docRef = doc(db, "Users", `${auth.currentUser?.uid}`);
@@ -118,12 +101,7 @@ function Security() {
 
     getuser();
   }, []);
-  let asa = {
-    color: snackbarColor,
-    message: snackbarMessage,
-    open: snackbarIsOpen,
-  };
-  console.log(asa);
+
   return (
     <div className="account-page-security-container">
       <div className="account-page-security-container">

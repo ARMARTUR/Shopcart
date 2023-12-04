@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { PayloadAction } from "@reduxjs/toolkit";
+
 type isAuth = {
   auth: string | null;
 };
@@ -10,12 +10,18 @@ let userSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    userAuth(state, action) {
+    userAuth(
+      state: isAuth,
+      action: {
+        payload: any;
+        type: string;
+      }
+    ) {
       state.auth = action.payload;
     },
   },
 });
 
 export const { userAuth } = userSlice.actions;
-console.log(userSlice.reducer, "opuiodsyfhds");
+
 export default userSlice.reducer;

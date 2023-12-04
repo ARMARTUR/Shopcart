@@ -3,9 +3,8 @@ import Button from "@mui/joy/Button";
 import Snackbar from "@mui/joy/Snackbar";
 import PlaylistAddCheckCircleRoundedIcon from "@mui/icons-material/PlaylistAddCheckCircleRounded";
 import { typeSnackbar } from "../Redux/SnackbarReducer";
-import { ContentPasteSearchOutlined } from "@mui/icons-material";
+
 export default function SnackbarUi(props: typeSnackbar) {
-  console.log(props);
   return (
     <React.Fragment>
       <Snackbar

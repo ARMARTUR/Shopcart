@@ -1,11 +1,10 @@
-import React from "react";
 import "./SingIn.css";
 import { Link, NavigateFunction, useNavigate } from "react-router-dom";
 
 import { useForm, SubmitHandler } from "react-hook-form";
 import { UserCredential, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../Firebase/Firebase";
-function SingIn() {
+function SingIn(): JSX.Element {
   type inputs = {
     email: string;
     password: string;
@@ -21,23 +20,20 @@ function SingIn() {
 
       navigate("/");
     } catch (error) {
-      console.log(error);
+      throw error;
     }
   };
   const {
     register,
     handleSubmit,
-    watch,
+
     formState: { errors },
-    reset,
-    setError,
   } = useForm<inputs>({
     mode: "onBlur",
   });
 
   const onSubmit: SubmitHandler<inputs> = (data: inputs) => {
     singInFirebase(data.email, data.password);
-    console.log(1112323);
   };
   return (
     <div className="sing-in-container">

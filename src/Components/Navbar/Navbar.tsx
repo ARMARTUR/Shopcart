@@ -1,25 +1,20 @@
-import { Link, NavigateFunction, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Switch from "@mui/joy/Switch";
-import DarkMode from "@mui/icons-material/DarkMode";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import "./Navbar.css";
+import ModeNightIcon from "@mui/icons-material/ModeNight";
 import { Input } from "@mui/joy";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
 import { useState } from "react";
 import { useAppSelector } from "../../Redux/Hook";
 import React from "react";
-import { onAuthStateChanged } from "firebase/auth";
-import { useAppDispatch } from "../../Redux/Hook";
-import { auth } from "../../Firebase/Firebase";
-import { userAuth } from "../../Redux/AuthReducer";
 import Badge from "@mui/joy/Badge";
 import Typography from "@mui/joy/Typography";
 
-function Navbar() {
-  let isLoggined = useAppSelector((state) => state.auth.auth);
-  console.log(isLoggined, "isloggined navbar.tsx");
-  let navigate: NavigateFunction = useNavigate();
+function Navbar(): JSX.Element {
+  const [dark, setDark] = React.useState<boolean>(false);
   let [categories, setCatigories] = useState<boolean>(false);
+  let isLoggined: string | null = useAppSelector((state) => state.auth.auth);
   type TypeLinkStyle = {
     textDecoration: string;
     color: string;
@@ -94,19 +89,25 @@ function Navbar() {
               <Typography fontSize="xl">🛍</Typography>
             </Badge>
           </Link>
-          {/* <AddShoppingCartIcon /> */}
         </div>
         <div className="togle-mode">
           <Switch
-            slotProps={{
-              input: { "aria-label": "Dark mode" },
-              thumb: {
-                children: <DarkMode />,
-              },
-            }}
-            sx={{
-              "--Switch-thumbSize": "28px",
-            }}
+            color="neutral"
+            slotProps={{ input: { "aria-label": "dark mode" } }}
+            startDecorator={
+              <WbSunnyIcon
+                sx={{ color: dark ? "text.tertiary" : "danger.600" }}
+              />
+            }
+            endDecorator={
+              <ModeNightIcon
+                sx={{ color: dark ? "primary.500" : "text.tertiary" }}
+              />
+            }
+            checked={dark}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+              setDark(event.target.checked)
+            }
           />
         </div>
       </header>

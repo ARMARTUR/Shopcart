@@ -1,9 +1,9 @@
 import "./Footer.css";
 import { useAppSelector } from "../../Redux/Hook";
 
-function Footer() {
+function Footer(): JSX.Element {
   let categories = useAppSelector((state) => state.categories.categories);
-  console.log(categories);
+
   return (
     <>
       <footer className="footer-container">
@@ -87,15 +87,15 @@ function Footer() {
         <div className="footer-about-us-container">
           <div className="footer-about-us-text">About Us</div>
           <div className="footer-about-us-items-container">
-            <div className="footer-about-us-item   ">About Shopcart</div>
-            <div className="footer-about-us-item   ">Careers</div>
-            <div className="footer-about-us-item   ">Neews and Blogs</div>
-            <div className="footer-about-us-item   ">Help</div>
-            <div className="footer-about-us-item   ">Press Center</div>
-            <div className="footer-about-us-item   ">Shop By Location</div>
-            <div className="footer-about-us-item   ">Shopcart Brands</div>
-            <div className="footer-about-us-item   ">Affiliate & Partners</div>
-            <div className="footer-about-us-item   ">Ideas & Guides</div>
+            <div className="footer-about-us-item">About Shopcart</div>
+            <div className="footer-about-us-item">Careers</div>
+            <div className="footer-about-us-item">Neews and Blogs</div>
+            <div className="footer-about-us-item">Help</div>
+            <div className="footer-about-us-item">Press Center</div>
+            <div className="footer-about-us-item">Shop By Location</div>
+            <div className="footer-about-us-item">Shopcart Brands</div>
+            <div className="footer-about-us-item">Affiliate & Partners</div>
+            <div className="footer-about-us-item">Ideas & Guides</div>
           </div>
         </div>
         <div className="footer-services-container">

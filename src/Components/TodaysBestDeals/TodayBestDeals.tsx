@@ -1,4 +1,4 @@
-import { Navigation, Pagination, Scrollbar, A11y, autoplay } from "swiper";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import "./TodayBestDeals.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useAppSelector, useAppDispatch } from "../../Redux/Hook";
@@ -16,27 +16,38 @@ import Checkbox from "@mui/material/Checkbox";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
 import { auth, db } from "../../Firebase/Firebase";
-import { doc, updateDoc, arrayUnion, getDoc } from "firebase/firestore";
+import { doc, updateDoc, arrayUnion } from "firebase/firestore";
 import { fetchListProducts } from "../../Redux/ProductsReducer";
-import { FetchResult } from "../../Redux/ProductsReducer";
-function TodayBestDeals() {
+import { useNavigate } from "react-router-dom";
+import { FetchResult } from "../../Interfaces/ProductInterfaces";
+function TodayBestDeals(): JSX.Element {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const isLoading: boolean = useAppSelector((state) => state.products.loading);
   const productsList: FetchResult = useAppSelector(
     (state) => state.products.products
   );
 
-  const isLoading: boolean = useAppSelector((state) => state.products.loading);
-  const dispatch = useAppDispatch();
+  const changeDirectory = async (
+    id: number,
+    product: string
+  ): Promise<void> => {
+    return navigate(`product/${id}`, {
+      state: {
+        product: product,
+      },
+    });
+  };
 
   useEffect(() => {
     dispatch(fetchListProducts());
   }, []);
+
   const changeFavorite = async (id: any) => {
-    console.log(id, 646237843764862367);
-    console.log(auth.currentUser?.uid);
     if (auth.currentUser) {
       const favoriteRef = doc(db, "Users", `${auth.currentUser?.uid}`);
       await updateDoc(favoriteRef, {
-        favoriteMovies: arrayUnion(`${id}`), ////stex piti lini mer apranqi idin
+        favoriteMovies: arrayUnion(`${id}`),
       });
     }
   };
@@ -72,6 +83,10 @@ function TodayBestDeals() {
                       src={`${product.images[0]}`}
                       className="best-deals-item-image"
                       alt="Product Image"
+                      onClick={(e: React.MouseEvent) => {
+                        e.stopPropagation();
+                        changeDirectory(product.id, product.title);
+                      }}
                     />
                   </div>
                 </div>

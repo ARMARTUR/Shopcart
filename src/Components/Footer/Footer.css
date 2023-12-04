@@ -49,10 +49,12 @@
 .footer-about-us-text {
   margin-bottom: 20px;
   font-size: 18px;
+  font-family: Inter, sans-serif;
 }
 .footer-about-us-item {
+  margin: 10px 0px;
   transition: transform 0.2s ease;
-  margin: 7px 0px;
+  font: 15px Inter, sans-serif;
 }
 .footer-about-us-item:hover {
   cursor: pointer;
@@ -62,15 +64,18 @@
 .footer-services-text {
   margin-bottom: 20px;
   font-size: 18px;
+  font-family: Inter, sans-serif;
 }
 .footer-help-text {
   margin-bottom: 20px;
   font-size: 18px;
+  font-family: Inter, sans-serif;
 }
 
 .footer-help-item {
-  margin: 7px 0px;
+  margin: 10px 0px;
   transition: transform 0.2s ease;
+  font: 15px Inter, sans-serif;
 }
 .footer-help-item:hover {
   cursor: pointer;
@@ -78,8 +83,9 @@
   color: rgb(231, 146, 66);
 }
 .footer-services-item {
-  margin: 7px 0px;
+  margin: 10px 0px;
   transition: transform 0.2s ease;
+  font: 15px Inter, sans-serif;
 }
 .footer-services-item:hover {
   cursor: pointer;

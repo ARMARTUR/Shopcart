@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
-
+import { PayloadAction } from "@reduxjs/toolkit";
 interface ProductsState {
   categories: string[];
   loading: boolean;
@@ -33,15 +33,18 @@ const productSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchCategories.pending, (state) => {
+      .addCase(fetchCategories.pending, (state: ProductsState) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(fetchCategories.fulfilled, (state, action) => {
-        state.loading = false;
-        state.categories = action.payload;
-      })
-      .addCase(fetchCategories.rejected, (state, action) => {
+      .addCase(
+        fetchCategories.fulfilled,
+        (state: ProductsState, action: PayloadAction<string[]>) => {
+          state.loading = false;
+          state.categories = action.payload;
+        }
+      )
+      .addCase(fetchCategories.rejected, (state: ProductsState, action) => {
         state.loading = false;
         state.error = action.error.message ?? "Failed to fetch products.";
       });

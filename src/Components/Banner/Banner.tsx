@@ -1,7 +1,6 @@
-import React from "react";
 import "./Banner.css";
 
-const Banner = () => {
+const Banner = (): JSX.Element => {
   return (
     <section className="banner-area">
       <div className="container">

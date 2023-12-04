@@ -6,7 +6,7 @@ import { useAppDispatch } from "../../Redux/Hook";
 import DiscountBanner from "../../Components/DiscountBanner/DiscountBanner";
 import WeeklyTopProducts from "../../Components/WeeklyTopProducts/WeeklyTopProducts";
 import { fetchCategories } from "../../Redux/CategoriesReducer";
-
+import ProductPage from "../ProductPage/ProductPage";
 import Footer from "../../Components/Footer/Footer";
 function HomePage(): JSX.Element {
   let dispatch = useAppDispatch();

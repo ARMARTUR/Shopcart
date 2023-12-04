@@ -1,36 +1,41 @@
-import React, { useEffect, useState } from "react";
-import { fetchCategories } from "../../Redux/CategoriesReducer";
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../Redux/Hook";
 import { TypeFetchResult } from "../../Redux/SearchProductReducer";
 import "./WeeklyTopProducts.css";
 import { fetchProductByCategory } from "../../Redux/SearchProductReducer";
-import { Product } from "../../Redux/ProductsReducer";
 import Checkbox from "@mui/material/Checkbox";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
 import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
-import { doc, updateDoc } from "firebase/firestore";
-import { db } from "../../Firebase/Firebase";
 
+import { useNavigate } from "react-router-dom";
 function WeeklyTopProducts() {
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
-
   let categories: string[] = useAppSelector(
     (state) => state.categories.categories
   );
-
   let categoryProducts: TypeFetchResult = useAppSelector(
     (state) => state.searchProduct.products
   );
-  const label = { inputProps: { "aria-label": "Checkbox demo" } };
+  const changeDirectory = async (
+    id: number,
+    product: string
+  ): Promise<void> => {
+    return navigate(`product/${id}`, {
+      state: {
+        product: product,
+      },
+    });
+  };
   useEffect(() => {
     dispatch(fetchProductByCategory("laptops"));
   }, []);
   function fetchChangedCategory(category: string) {
     dispatch(fetchProductByCategory(category));
   }
-
+  const label = { inputProps: { "aria-label": "Checkbox demo" } };
   return (
     <div className="weekly-top-products-container">
       <div className="weekly-top-product-text">Weekly Top Products For You</div>
@@ -53,9 +58,12 @@ function WeeklyTopProducts() {
       <div className="weekly-top-products-item-container">
         {categoryProducts.products
           .slice(1, categoryProducts.products.length)
-          .map((category: Product) => {
+          .map((category) => {
             return (
-              <div className="weekly-top-products-item">
+              <div
+                className="weekly-top-products-item"
+                onClick={() => changeDirectory(category.id, category.title)}
+              >
                 <div className="weekly-top-products-items-favorite-container">
                   <Checkbox
                     {...label}
@@ -100,7 +108,14 @@ function WeeklyTopProducts() {
                       {`(${category.stock})`}
                     </div>
                   </div>
-                  <div className="weekly-top-products-items-add-to-cart-button">
+                  <div
+                    className="weekly-top-products-items-add-to-cart-button"
+                    onClick={(
+                      e: React.MouseEvent<HTMLDivElement, MouseEvent>
+                    ) => {
+                      e.stopPropagation();
+                    }}
+                  >
                     Add To Cart
                   </div>
                 </div>
@@ -113,82 +128,3 @@ function WeeklyTopProducts() {
 }
 
 export default WeeklyTopProducts;
-
-// <div className="weekly-top-products-container">
-//   <div className="weekly-top-product-text">Weekly Top Products For You</div>
-
-//   <div className="weekly-top-products-category-container">
-//     <div className="weekly-top-products-categories-container">
-//       {categories.slice(0, 10).map((category: string) => {
-//         return (
-//           <div
-//             className="weekly-top-products-categories-item"
-//             onClick={() => fetchChangedCategory(category)}
-//           >
-//             {category}
-//           </div>
-//         );
-//       })}
-//     </div>
-
-//     {categoryProducts.products
-//       .slice(1, categoryProducts.products.length)
-//       .map((category: Product) => {
-//         return (
-//           <>
-//             <div className="weekly-top-products-items">
-//               <div className="weekly-top-products-items-image-container">
-//                 <div className="weekly-top-products-items-favorite">
-//                   <Checkbox
-//                     {...label}
-//                     icon={<FavoriteBorder />}
-//                     checkedIcon={<Favorite />}
-//                   />
-//                 </div>
-//                 <img
-//                   src={category.images[0]}
-//                   className="weekly-top-products-items-image"
-//                 ></img>
-//               </div>
-
-//               <div className="weekly-top-products-items-info-container">
-//                 <div className="weekly-top-products-items-name-and-price-container">
-//                   <div className="weekly-top-products-items-name">
-//                     {category.title}
-//                   </div>
-
-//                   <div className="weekly-top-products-items-price">
-//                     {`${category.price}$`}
-//                   </div>
-//                 </div>
-
-//                 <div className="weekly-top-products-items-rating-container">
-//                   <div className="weeekly-top-products-items-rating">
-//                     <Stack spacing={1}>
-//                       <Rating
-//                         name="half-rating-read"
-//                         defaultValue={0}
-//                         precision={0.5}
-//                         readOnly
-//                         color="blue"
-//                         size="small"
-//                         value={category.rating}
-//                       />
-//                     </Stack>
-//                   </div>
-//                   <div className="weekly-top-products-items-rating-count-container">
-//                     <div className="weekly-top-products-items-rating-count">
-//                       {category.stock}
-//                     </div>
-//                   </div>
-//                 </div>
-//                 <div className="weekly-top-products-items-add-to-cart-container">
-//                   Add To Cart
-//                 </div>
-//               </div>
-//             </div>
-//           </>
-//         );
-//       })}
-//   </div>
-// </div>

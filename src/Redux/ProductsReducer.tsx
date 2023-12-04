@@ -1,46 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { PayloadAction } from "@reduxjs/toolkit";
 
-export interface Product {
-  brand: string;
-  category: string;
-  description: string;
-  id: number;
-  images: string[];
-  price: number;
-  thumbnail: string;
-  rating: number;
-  stock: number;
-  title: string;
-}
-export type FetchResult = {
-  limit: number;
-  products: Product[];
-  skip: number;
-  total: number;
-};
-
+import { FetchResult } from "../Interfaces/ProductInterfaces";
 interface ProductsState {
   products: FetchResult;
   loading: boolean;
   error: string | null;
 }
-
-export const fetchListProducts = createAsyncThunk<FetchResult>(
-  "productsList/fetch",
-  async () => {
-    let fetchData: Response;
-
-    fetchData = await fetch(`https://dummyjson.com/products`);
-
-    if (!fetchData.ok) {
-      throw new Error("Failed to fetch products.");
-    }
-
-    const data: FetchResult = await fetchData.json();
-
-    return data;
-  }
-);
 
 const initialState: ProductsState = {
   loading: false,
@@ -53,20 +19,40 @@ const initialState: ProductsState = {
   },
 };
 
+export const fetchListProducts = createAsyncThunk(
+  "productsList/fetch",
+  async () => {
+    try {
+      let fetchData: Response;
+
+      fetchData = await fetch(`https://dummyjson.com/products`);
+
+      const data: FetchResult = await fetchData.json();
+
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  }
+);
+
 const productSlice = createSlice({
   name: "products",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchListProducts.pending, (state) => {
+      .addCase(fetchListProducts.pending, (state: ProductsState) => {
         state.loading = false;
         state.error = null;
       })
-      .addCase(fetchListProducts.fulfilled, (state, action) => {
-        state.loading = true;
-        state.products = action.payload;
-      })
+      .addCase(
+        fetchListProducts.fulfilled,
+        (state, action: PayloadAction<FetchResult>) => {
+          state.loading = true;
+          state.products = action.payload;
+        }
+      )
       .addCase(fetchListProducts.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message ?? "Failed to fetch products.";

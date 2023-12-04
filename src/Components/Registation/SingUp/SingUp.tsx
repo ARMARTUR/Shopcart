@@ -3,18 +3,11 @@ import "./SingUp.css";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useState } from "react";
 import { setDoc, doc } from "firebase/firestore";
-import {
-  Auth,
-  UserCredential,
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
-import firebase from "firebase/app";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../Firebase/Firebase";
 import { db } from "../../../Firebase/Firebase";
-import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
-import { getAuth } from "firebase/auth";
-import { useAppDispatch } from "../../../Redux/Hook";
+
 type inputs = {
   name: string;
   surname: string;
@@ -24,14 +17,13 @@ type inputs = {
 
 function SingUp() {
   let navigate: NavigateFunction = useNavigate();
-  let dispatch = useAppDispatch();
   let [agree, setAgree] = useState<boolean>(false);
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-    reset,
+
     setError,
   } = useForm<inputs>({
     mode: "onBlur",
@@ -58,7 +50,7 @@ function SingUp() {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
+
         const usersRef = doc(db, "Users", `${user.uid}`);
         setDoc(
           usersRef,
@@ -67,8 +59,7 @@ function SingUp() {
         );
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        throw error;
       });
 
     navigate("/");

@@ -1,4 +1,3 @@
-import React from "react";
 import { signOut } from "firebase/auth";
 
 import { useNavigate } from "react-router-dom";
@@ -11,18 +10,16 @@ import TabList from "@mui/joy/TabList";
 import Tab from "@mui/joy/Tab";
 import TabPanel from "@mui/joy/TabPanel";
 import "./AccountPage.css";
-import { Height } from "@mui/icons-material";
-import { getAuth } from "firebase/auth";
+
 import Security from "../../Components/Security/Security";
 import { auth } from "../../Firebase/Firebase";
-import { collection, doc, getDocs } from "firebase/firestore";
-import { updateDoc } from "firebase/firestore";
+import { doc } from "firebase/firestore";
+
 import { db } from "../../Firebase/Firebase";
 import { useEffect } from "react";
 import { getDoc } from "firebase/firestore";
 import { DocumentData } from "firebase/firestore";
 import { useState } from "react";
-import { Auth } from "firebase/auth";
 
 function AccountPage() {
   let [agree, setAgree] = useState<any>({});
@@ -52,7 +49,7 @@ function AccountPage() {
         email: docSnap?.email,
         surname: docSnap?.surname,
       };
-      console.log("asd" in userData, "userdata");
+
       setAgree(userData);
     };
 
@@ -67,7 +64,6 @@ function AccountPage() {
   // let aa = await docSnap.data();
   // setAgree(aa);
 
-  // console.log(docSnap.data());
   let dispatch = useAppDispatch();
   let navigate: NavigateFunction = useNavigate();
   const onLogOutClick = (): void => {
@@ -75,9 +71,7 @@ function AccountPage() {
       .then(() => {
         navigate("/");
       })
-      .catch((error) => {
-        console.log(error.message, 11111111111111111111111);
-      });
+      .catch((error) => {});
     dispatch(userAuth(null));
   };
 

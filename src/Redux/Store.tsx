@@ -4,9 +4,11 @@ import CategoriesReducer from "./CategoriesReducer";
 import SearchProductReducer from "./SearchProductReducer";
 import AuthReducer from "./AuthReducer";
 import SnackbarReducer from "./SnackbarReducer";
+import ProductReducer from "./ProductReducer";
 const store = configureStore({
   reducer: {
     products: productsReducer,
+    product: ProductReducer,
     categories: CategoriesReducer,
     searchProduct: SearchProductReducer,
     auth: AuthReducer,

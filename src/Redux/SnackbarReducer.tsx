@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { PayloadAction } from "@reduxjs/toolkit";
 
 export type typeSnackbar = {
   message: string;
@@ -15,7 +14,13 @@ let snackbarSlice = createSlice({
   name: "snackbar",
   initialState,
   reducers: {
-    setSnackbar(state, action) {
+    setSnackbar(
+      state: typeSnackbar,
+      action: {
+        payload: any;
+        type: string;
+      }
+    ) {
       state.message = action.payload.message;
       state.color = action.payload.color;
       state.open = action.payload.open;
@@ -24,5 +29,5 @@ let snackbarSlice = createSlice({
 });
 
 export const { setSnackbar } = snackbarSlice.actions;
-// console.log(snackbarSlice.reducer, "opuiodsyfhds");
+
 export default snackbarSlice.reducer;

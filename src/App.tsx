@@ -18,9 +18,8 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useAppDispatch } from "./Redux/Hook";
 import { userAuth } from "./Redux/AuthReducer";
 import Cart from "./Pages/CartPage/Cart";
-import { db } from "./Firebase/Firebase";
-import { collection } from "firebase/firestore";
-import { getDocs } from "firebase/firestore";
+
+import ProductPage from "./Pages/ProductPage/ProductPage";
 function App() {
   let logginedUser = useAppSelector((state) => state.auth.auth);
   let dispatch = useAppDispatch();
@@ -35,11 +34,12 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-
+        <Route path="product" element={<ProductPage />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<TermsOfService />} />
         <Route path="/notification" element={<Notification />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/product/:productId" element={<ProductPage />} />
         {logginedUser === null ? (
           <>
             <Route path="/singin" element={<SingIn />} />

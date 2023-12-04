@@ -1,9 +1,6 @@
-import { useParams } from "react-router-dom";
 import "./Notification.css";
 
 function Notification() {
-  let params = useParams();
-  console.log(params);
   return (
     <div className="notification-container">
       <div className="notification-setting-header">Notification Settings</div>

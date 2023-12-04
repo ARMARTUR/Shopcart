@@ -29,7 +29,6 @@ export const fetchProductByCategory = createAsyncThunk<
   TypeFetchResult,
   TypeCategory
 >("category/fetch", async (TypeCategory) => {
-  console.log(TypeCategory, "kraken");
   let response: Response = await fetch(
     `https://dummyjson.com/products/category/${TypeCategory}`
   );
